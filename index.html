@@ -265,12 +265,12 @@ document.addEventListener('keydown',async e=>{
 
 // 触屏滑动
 let touchStartX=0,touchStartY=0;
-container.addEventListener('touchstart',e=>{
+document.addEventListener('touchstart',e=>{
   touchStartX=e.touches[0].clientX;
   touchStartY=e.touches[0].clientY;
 },{passive:true});
 
-container.addEventListener('touchend',async e=>{
+document.addEventListener('touchend',async e=>{
   const dx=e.changedTouches[0].clientX - touchStartX;
   const dy=e.changedTouches[0].clientY - touchStartY;
   const minSwipe=30;
