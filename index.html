@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -70,7 +70,6 @@ body{display:flex;flex-direction:column;align-items:center;background:#faf8ef;ma
 const size=4;
 let board=[];
 let score=0;
-let hasWon=false;
 const container=document.getElementById('container');
 const scoreEl=document.getElementById('score');
 const restartBtn=document.getElementById('restart');
@@ -89,7 +88,7 @@ const textMap={
     2048:"三个\n代表",
     4096: "谈笑\n风生",
     8192:"怒斥\n港记",
-    16384:"很惭愧！"
+    16384:"很惭愧"
 };
 
 const colors={
@@ -127,7 +126,6 @@ function drawBackground(){
 function init(){
   board=Array(size).fill().map(()=>Array(size).fill(0));
   score=0;
-  hasWon=False;
   drawBackground();
   container.querySelectorAll('.tile').forEach(el=>el.remove());
   addRandom();addRandom();
@@ -299,24 +297,6 @@ function canMove(){
   return false;
 }
 
-function checkWin(){
-  // 如果已经弹窗过，就不再重复弹窗
-  if (hasWon) return;
-  // 遍历棋盘检查是否有 16384 (对应“很惭愧”)
-  for(let i=0; i<size; i++){
-    for(let j=0; j<size; j++){
-      if(board[i][j] === 1024){
-        hasWon = true; // 标记为已触发
-        // 使用 setTimeout 延迟一点点弹窗，让方块先完成合成动画并渲染出来
-        setTimeout(() => {
-          alert("现在你可以和我谈笑风生了！");
-        }, 200);
-        return;
-      }
-    }
-  }
-}
-  
 function checkGameOver(){
   if(!canMove()) alert(`还是要提升自己的姿势水平！分数：${score}`);
 }
