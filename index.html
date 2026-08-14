@@ -32,7 +32,10 @@ body{display:flex;flex-direction:column;align-items:center;background:#faf8ef;ma
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:12px;
+  font-size: 18px;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  word-break: normal;
   font-weight:bold;
   text-align:center;
   word-break:break-all;
@@ -72,19 +75,19 @@ const scoreEl=document.getElementById('score');
 const restartBtn=document.getElementById('restart');
 
 const textMap={
-    2:"扬州江少",
-    4:"中央大学",
-    8:"交通大学",
-    16:"长春一汽",
-    32:"上海市长",
-    64:"市委书记",
-    128:"螳臂当车",
-    256:"苟利国家",
-    512:"如履薄冰",
-    1024:"九八抗洪",
-    2048:"三个代表",
-    4096: "谈笑风生",
-    8192:"怒斥港记",
+    2:"扬州\n江少",
+    4:"中央\n大学",
+    8:"交通\n大学",
+    16:"长春\n一汽",
+    32:"上海\n市长",
+    64:"市委\n书记",
+    128:"螳臂\n当车",
+    256:"苟利\n国家",
+    512:"如履\n薄冰",
+    1024:"九八\n抗洪",
+    2048:"三个\n代表",
+    4096: "谈笑\n风生",
+    8192:"怒斥\n港记",
     16384:"很惭愧"
 };
 
@@ -93,7 +96,7 @@ const colors={
     2:'#eee4da',4:'#ede0c8',8:'#f2b179',
     16:'#f59563',32:'#f67c5f',64:'#f65e3b',128:'#edcf72',
     256:'#edcc61',512:'#edc850',1024:'#edc53f',2048:'#edc22e',
-    4096:'#b889e0',8192:'#9c62d0',16384:'#7a3eb8'
+    4096:'#b889e0',8192:'#9c62d0',16384:'#000000‌'
 };
 
 // 格子像素位置
